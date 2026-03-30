@@ -1,0 +1,108 @@
+/* Основні налаштування */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background-color: #fff; line-height: 1.4; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 15px; } /* Трохи розширив контейнер */
+
+/* Header */
+.header { padding: 20px 0; background: #fff; }
+.header__inner { display: flex; justify-content: space-between; align-items: flex-end; }
+.logo img { max-width: 180px; }
+.header__right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.search-box { border-bottom: 1px solid #ccc; display: flex; }
+.search-input { border: none; outline: none; padding: 3px; font-size: 13px; width: 150px; }
+.search-btn { background: none; border: none; cursor: pointer; }
+.nav { display: flex; gap: 15px; }
+.nav-link { text-decoration: none; color: #333; font-weight: bold; font-size: 13px; transition: 0.3s; }
+.nav-link:hover { color: #5a9e4d; }
+.nav-link--active { color: #5a9e4d; border-bottom: 2px solid #5a9e4d; }
+
+/* Banner */
+.banner-img { width: 100%; display: block; }
+
+/* Form Section */
+.form-section { background-color: #f7f8f7; padding: 60px 0; animation: fadeIn 1s ease-in; } /* Збільшив відступ секції */
+.page-title { color: #3e4f3d; font-size: 32px; margin-bottom: 5px; }
+.divider { color: #a5c38c; margin-bottom: 40px; letter-spacing: 2px; }
+
+/* СІТКА ТА ПОЛЯ - ТУТ ОСНОВНІ ЗМІНИ */
+.form-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px; /* Збільшив відстань між колонками */
+}
+
+.form-group {
+    margin-bottom: 25px; /* Збільшив відстань між полями вниз */
+}
+
+.form-group label { 
+    display: block; 
+    font-size: 12px; 
+    font-weight: bold; 
+    color: #555; 
+    margin-bottom: 8px; /* Більше простору над інпутом */
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%; 
+    padding: 14px 15px; /* Зробив поля значно ширшими (вищими) */
+    border: 1px solid #d1d1d1; 
+    border-radius: 4px; 
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus { 
+    border-color: #5a9e4d; outline: none; box-shadow: 0 0 5px rgba(90, 158, 77, 0.2); 
+}
+
+.textarea-group textarea { 
+    height: 310px; /* Збільшив висоту, щоб відповідала новій висоті лівої колонки */
+    resize: none; 
+}
+
+/* Капча та Кнопка */
+.form-bottom { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 30px; }
+.captcha-label { font-size: 12px; font-weight: bold; color: #666; display: block; margin-bottom: 8px; }
+.captcha-row { display: flex; align-items: center; }
+.captcha-img { 
+    background: #fff; 
+    padding: 12px 20px; 
+    font-weight: bold; 
+    border: 1px solid #ccc; 
+    font-style: italic; 
+    display: inline-block; 
+}
+.captcha-input { width: 100px !important; margin-left: 15px; }
+
+.send-btn {
+    background-color: #5c9a49; color: white; border: none; padding: 16px 50px; 
+    border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 16px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+.send-btn:hover { background-color: #4a843f; transform: scale(1.05); }
+
+/* Решта стилів (Address, Footer) */
+.address-section-white { background-color: #fff; padding: 60px 0; text-align: center; }
+.addr-title { color: #5a9e4d; text-decoration: underline; margin-bottom: 15px; font-size: 18px; }
+.address-text p { font-size: 14px; line-height: 1.6; color: #444; }
+.green-text { color: #5a9e4d; font-weight: bold; }
+
+.main-footer { background-color: #34444c; color: #fff; padding: 30px 0 20px 0; }
+.footer-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #4a5d66; padding-bottom: 20px; }
+.footer-links { font-size: 11px; }
+.footer-links a { color: #fff; text-decoration: none; transition: 0.3s; }
+.footer-links a:hover { color: #a5c38c; }
+
+.social-icons { display: flex; gap: 10px; }
+.social-link img { 
+    width: 28px; 
+    filter: invert(52%) sepia(13%) saturate(1831%) hue-rotate(65deg) brightness(95%) contrast(85%);
+    transition: 0.3s; 
+}
+.social-link:hover img { transform: translateY(-5px) scale(1.1); filter: brightness(1.1); }
+.footer-copy { text-align: center; font-size: 11px; color: #90a4ae; margin-top: 20px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
