@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=320, initial-scale=1.0"/> 
+    <title>Agridera - All Grapefruit Hybrids</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="responsive.css"> 
+</head>
+<body>
+    <div id="app">
+        <header class="site-header">
+            <div class="container header-flex">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="Logo@2x.png" alt="Agridera Logo">
+                    </a>
+                </div>
+
+                <input type="checkbox" id="menu-toggle" style="display: none;">
+
+                <label for="menu-toggle" class="mobile-menu-btn" @click="isMenuOpen = !isMenuOpen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search" class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+
+                    <nav class="main-nav" :class="{ 'active': isMenuOpen }">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Company Profile</a></li>
+                            <li><a href="tomato_all.html" class="active">Products</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">R & D</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-banner">
+            <div class="container">
+                <img src="greypfrut.jpg" alt="Grapefruit Banner" style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+
+        <main class="container fade-in">
+            <section class="content-intro">
+                <h1>Agridera Fresh Market Grapefruit Hybrids</h1>
+                <div class="stars">★★★★★</div>
+                
+                <div class="description">
+                    <p>Agridera aims to be one of the world’s leading companies in the breeding of <b>high-quality grapefruit hybrids</b>.</p>
+                </div>
+
+                <div class="red-sidebar-accent">
+                    Agridera grapefruit programs focus on: Red Star varieties, Seedless White hybrids, and Sweet Pink segments.
+                </div>
+            </section>
+
+            <section class="hybrids-grid">
+                <div v-for="product in products" :key="product.id" class="hybrid-item">
+                    <a :href="'Tomato_one.html?id=' + product.id" class="card-link">
+                        <div class="img-container">
+                            <img :src="product.image" :alt="product.title">
+                        </div>
+                        <h3>{{ product.title }}</h3>
+                        <p>{{ product.short_text }}</p>
+                    </a>
+                    
+                    <div class="button-wrapper">
+                        <button v-if="!btnVisible[product.id]" 
+                                @click="addToCart(product.id)" 
+                                class="btn-cart btn-add">
+                            Add to cart
+                        </button>
+                        <a v-else href="contact.html" class="btn-cart btn-go">
+                            Go to cart
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <nav class="footer-nav">
+                         <a href="#">PROFILE</a> | <a href="#">MANAGEMENT</a> | <a href="#">PRODUCTS</a> | 
+                    <a href="#">R&D</a> | <a href="#">LINKS</a> | <a href="#">SITEMAP</a> | <a href="#">CONTACT</a>
+                    </nav>
+                    <div class="social-icons">
+                        <a href="#"><img src="Ico_fb.png" alt="FB"></a>
+                        <a href="#"><img src="Ico_in.png" alt="LI"></a>
+                        <a href="#"><img src="Ico_inst.png" alt="IG"></a>
+                        <a href="#"><img src="Ico_tube.png" alt="YT"></a>
+                        <a href="#"><img src="Ico_tw.png" alt="TW"></a>
+                    </div>
+                </div>
+                <div class="footer-copyright">AGRIDERA SEEDS & AGRICULTURE LTD. © 2026</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

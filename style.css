@@ -1,0 +1,94 @@
+/* Обнулення */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; line-height: 1.5; color: #333; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.full-img { width: 100%; display: block; }
+
+/* БАНЕР З ПШЕНИЦЕЮ */
+.hero-section {
+    width: 100%;
+    height: 600px;
+    background: url('image.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ШАПКА */
+.site-header { padding: 30px 0; }
+.header-flex { display: flex; justify-content: space-between; align-items: flex-end; }
+.logo img { height: 75px; }
+
+.header-right { text-align: right; }
+.search-box { border-bottom: 1px solid #333; margin-bottom: 12px; padding-bottom: 4px; }
+.search-box input { background: transparent; border: none; outline: none; width: 150px; }
+
+.main-nav ul { list-style: none; display: flex; gap: 15px; }
+.main-nav a { text-decoration: none; color: #333; font-weight: bold; font-size: 13px; }
+
+/* ТЕКСТ ТА КНОПКА */
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero-content h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 48px;
+    color: #5d6d48;
+    margin-bottom: 30px;
+}
+.btn-read-more {
+    background: #6fb052;
+    color: white;
+    padding: 14px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.btn-read-more:hover { background: #5a9143; }
+
+/* СЕКЦІЇ */
+.products-strip { background: #fff; padding: 25px 0; }
+.mission-section { background: #f4f4f4; padding: 60px 0; }
+
+/* ACTIVITIES GRID */
+.activities { padding: 60px 0; text-align: center; }
+.section-title { font-family: 'Roboto Slab', serif; color: #3e4d56; font-size: 32px; }
+.dots { color: #8ab34a; letter-spacing: 5px; margin-bottom: 40px; }
+
+.activity-grid { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 25px; 
+}
+.card { flex: 1; text-align: center; }
+.activity-img { width: 100%; height: auto; margin-bottom: 15px; }
+.card h3 { color: #6fb052; font-size: 19px; margin-bottom: 10px; }
+.card-line { width: 45px; height: 2px; background: #eee; margin: 0 auto 10px; }
+.card p { font-size: 13px; color: #777; padding: 0 10px; }
+
+/* ФУТЕР */
+.main-footer { background: #334148; color: white; padding-top: 40px; }
+.footer-top { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-bottom: 25px; 
+    border-bottom: 1px solid #4a575d; 
+}
+.footer-nav a { color: white; text-decoration: none; font-size: 11px; margin: 0 5px; }
+.socials img { height: 22px; margin-left: 12px; cursor: pointer; opacity: 0.8; }
+.socials img:hover { opacity: 1; }
+
+.footer-bottom { 
+    background: #2a363d; 
+    padding: 15px 0; 
+    text-align: center; 
+    font-size: 11px; 
+    color: rgba(255,255,255,0.6);
+}
