@@ -1,0 +1,294 @@
+/* --- 1. ЗАГАЛЬНІ СТИЛІ ТА ЗМІННІ --- */
+:root {
+    --agri-green: #79b51c;
+    --agri-green-hover: #669916;
+    --dark-blue: #003366;
+    --footer-bg: #324348;
+    --body-pink: #fdf1f2;
+    --text-dark: #333d47;
+    --gray-btn: #e0e0e0;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--body-pink);
+    color: var(--text-dark);
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+main, .main-content {
+    flex: 1;
+}
+
+/* --- 2. HEADER ТА МЕНЮ --- */
+.main-header, .site-header {
+    background: #fff;
+    padding: 15px 0 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-small, .logo img, .header-flex a img {
+    height: 60px !important;
+    width: auto !important;
+    display: block;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.search-container, .search-box {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #999;
+    padding: 2px 0;
+    width: 220px;
+}
+
+.search-input, .search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    text-transform: uppercase;
+    flex-grow: 1;
+}
+
+.nav-menu, .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+    align-items: center;
+}
+
+.nav-menu a, .main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    line-height: 1;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--agri-green);
+}
+
+/* --- 3. БАНЕР --- */
+.page-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 0 0 10px 10px;
+}
+
+/* --- 4. СІТКА ТОВАРІВ --- */
+.hybrids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    margin: 40px 0 60px;
+}
+
+.hybrid-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.hybrid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.img-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* --- 5. КНОПКИ --- */
+.btn-cart {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.btn-add {
+    background-color: var(--agri-green);
+    color: #fff;
+}
+
+.btn-go {
+    background-color: var(--gray-btn);
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+/* --- 6. ФУТЕР (ПОВНІСТЮ ПІДРІВНЯНИЙ) --- */
+.main-footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    padding: 40px 0 20px;
+    width: 100%;
+    clear: both;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.footer-nav a:hover { color: var(--agri-green); }
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-icons a {
+    background: var(--agri-green); /* ЗЕЛЕНІ КНОПКИ */
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--agri-green-hover);
+    transform: translateY(-3px);
+}
+
+.social-icons img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 10px;
+    color: #8899a0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- 7. АДАПТИВНІСТЬ --- */
+@media (max-width: 1024px) {
+    .container { max-width: 950px; }
+    .hybrids-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .header-flex { flex-direction: column; gap: 15px; }
+    .header-right { align-items: center; }
+    .hybrids-grid { grid-template-columns: repeat(2, 1fr); }
+    .logo img { height: 50px !important; }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    .footer-nav { justify-content: center; }
+}
+
+@media (max-width: 640px) {
+    .hybrids-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .logo img { height: 40px !important; }
+    .search-container, .search-box { width: 100%; }
+    
+    .footer-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container { padding: 0 10px; }
+    .footer-copyright { font-size: 9px; }
+}
